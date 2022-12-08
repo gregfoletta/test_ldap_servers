@@ -1,18 +1,18 @@
-dn: dc=retail,dc=foletta,dc=xyz
+dn: dc=wholesale,dc=foletta,dc=xyz
 objectClass: dcObject
 objectClass: organization
-dc: retail
+dc: wholesale
 o: example
 
 # OU
-dn: ou=users,dc=retail,dc=foletta,dc=xyz
+dn: ou=users,dc=wholesale,dc=foletta,dc=xyz
 objectClass: organizationalUnit
 ou: users
 
 # User
-dn: cn=greg,ou=users,dc=retail,dc=foletta,dc=xyz
+dn: cn=greg,ou=users,dc=wholesale,dc=foletta,dc=xyz
 uid: greg
-mail: greg@retail.foletta.xyz
+mail: greg@wholesale.foletta.xyz
 cn: Greg
 sn: Foletta
 objectClass: inetOrgPerson
@@ -23,28 +23,28 @@ uidNumber: 1000
 gidNumber: 1000
 homeDirectory: /home/greg
 
-dn: cn=mark,ou=users,dc=retail,dc=foletta,dc=xyz
-uid: mark
-mail: mark@retail.foletta.xyz
-cn: Mark
-sn: Sampson
+dn: cn=garth,ou=users,dc=wholesale,dc=foletta,dc=xyz
+uid: garth
+mail: garth@wholesale.foletta.xyz
+cn: Garth
+sn: Marenghi
 objectClass: inetOrgPerson
 objectClass: posixAccount
 objectClass: shadowAccount
 userPassword:: Zm9ydGluZXQ=
 uidNumber: 1001
 gidNumber: 1001
-homeDirectory: /home/mark
+homeDirectory: /home/garth
 
-dn: cn=peter,ou=users,dc=retail,dc=foletta,dc=xyz
-uid: peter
-mail: peter@retail.foletta.xyz
-cn: Peter
-sn: Jones
+dn: cn=matt,ou=users,dc=wholesale,dc=foletta,dc=xyz
+uid: matt
+mail: matt@wholesale.foletta.xyz
+cn: Matt
+sn: Berry
 objectClass: inetOrgPerson
 objectClass: posixAccount
 objectClass: shadowAccount
 userPassword:: Zm9ydGluZXQ=
 uidNumber: 1002
 gidNumber: 1002
-homeDirectory: /home/peter
+homeDirectory: /home/matt
