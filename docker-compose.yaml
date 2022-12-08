@@ -12,16 +12,14 @@ services:
       - LDAP_ADMIN_USERNAME=admin
       - LDAP_ADMIN_PASSWORD=adminpassword
       - LDAP_CUSTOM_LDIF_DIR=ldifs/retail
-      - LDAP_USERS=greg,james
-      - LDAP_PASSWORDS=fortinet,fortinet
       - LDAP_ENABLE_TLS=no
-      - LDAP_TLS_CERT_FILE=/opt/bitnami/openldap/certs/leaf.pem
-      - LDAP_TLS_KEY_FILE=/opt/bitnami/openldap/certs/leaf.key
-      - LDAP_TLS_CA_FILE=/opt/bitnami/openldap/certs/CA.pem
+      #- LDAP_TLS_CERT_FILE=/opt/bitnami/openldap/certs/leaf.pem
+      #- LDAP_TLS_KEY_FILE=/opt/bitnami/openldap/certs/leaf.key
+      #- LDAP_TLS_CA_FILE=/opt/bitnami/openldap/certs/CA.pem
 
     volumes:
       - './ldifs:/ldifs'
-      - './certs:/opt/bitnami/openldap/certs'
+      #- './certs:/opt/bitnami/openldap/certs'
     networks:
       ldap:
         ipv4_address: 172.18.0.2
@@ -36,16 +34,14 @@ services:
       - LDAP_ROOT=dc=wholesale,dc=foletta,dc=xyz
       - LDAP_ADMIN_USERNAME=admin
       - LDAP_ADMIN_PASSWORD=adminpassword
-      - LDAP_USERS=greg,julie
-      - LDAP_PASSWORDS=fortinet,fortinet
       - LDAP_ENABLE_TLS=no
-      - LDAP_TLS_CERT_FILE=/opt/bitnami/openldap/certs/leaf.pem
-      - LDAP_TLS_KEY_FILE=/opt/bitnami/openldap/certs/leaf.key
-      - LDAP_TLS_CA_FILE=/opt/bitnami/openldap/certs/CA.pem
+      #- LDAP_TLS_CERT_FILE=/opt/bitnami/openldap/certs/leaf.pem
+      #- LDAP_TLS_KEY_FILE=/opt/bitnami/openldap/certs/leaf.key
+      #- LDAP_TLS_CA_FILE=/opt/bitnami/openldap/certs/CA.pem
 
     volumes:
-      #- './ldifs:/ldifs'
-      - './certs:/opt/bitnami/openldap/certs'
+      - './ldifs:/ldifs'
+      #- './certs:/opt/bitnami/openldap/certs'
     networks:
       ldap:
         ipv4_address: 172.18.0.3
