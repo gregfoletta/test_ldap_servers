@@ -26,11 +26,10 @@ Creating network "ldap_ldap" with driver "bridge"
 Creating ldap_openldap_retail_1    ... done
 Creating ldap_openldap_wholesale_1 ... done
 
-bash# ldapsearch -vv -x -H ldap://ldap.retail.foletta.xyz:1389 -D cn=greg,ou=users,dc=retail,dc=foletta,dc=xyz  -b dc=retail,dc=foletta,dc=xyz -W         
-ldap_initialize( ldap://ldap.retail.foletta.xyz:1389/??base )
+bash# ldapsearch -H ldap://ldap.retail.foletta.xyz:1389 \    
+      -D cn=greg,ou=users,dc=retail,dc=foletta,dc=xyz  \
+       -b dc=retail,dc=foletta,dc=xyz -W
 Enter LDAP Password: 
-filter: (objectclass=*)
-requesting: All userApplication attributes
 # extended LDIF
 #
 # LDAPv3
