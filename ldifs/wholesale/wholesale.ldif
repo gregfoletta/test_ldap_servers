@@ -18,7 +18,7 @@ sn: Foletta
 objectClass: inetOrgPerson
 objectClass: posixAccount
 objectClass: shadowAccount
-userPassword:: Zm9ydGluZXQ=
+userPassword: 4VzjybjE5yeLzsdw
 uidNumber: 1000
 gidNumber: 1000
 homeDirectory: /home/greg
@@ -31,7 +31,7 @@ sn: Marenghi
 objectClass: inetOrgPerson
 objectClass: posixAccount
 objectClass: shadowAccount
-userPassword:: Zm9ydGluZXQ=
+userPassword: wYUH5Z228VxC3zzc
 uidNumber: 1001
 gidNumber: 1001
 homeDirectory: /home/garth
@@ -44,7 +44,7 @@ sn: Berry
 objectClass: inetOrgPerson
 objectClass: posixAccount
 objectClass: shadowAccount
-userPassword:: Zm9ydGluZXQ=
+userPassword: CzhzPKmvTPaq5SAb
 uidNumber: 1002
 gidNumber: 1002
 homeDirectory: /home/matt
