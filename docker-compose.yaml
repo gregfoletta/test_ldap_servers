@@ -34,6 +34,7 @@ services:
       - LDAP_ROOT=dc=wholesale,dc=foletta,dc=xyz
       - LDAP_ADMIN_USERNAME=admin
       - LDAP_ADMIN_PASSWORD=adminpassword
+      - LDAP_CUSTOM_LDIF_DIR=ldifs/wholesale
       - LDAP_ENABLE_TLS=no
       #- LDAP_TLS_CERT_FILE=/opt/bitnami/openldap/certs/leaf.pem
       #- LDAP_TLS_KEY_FILE=/opt/bitnami/openldap/certs/leaf.key
