@@ -1,0 +1,65 @@
+version: '2'
+
+services:
+  openldap_retail:
+    hostname: retail
+    image: docker.io/bitnami/openldap:2.6
+    #ports:
+    #  - '1389:1389'
+    #  - '1636:1636'
+    environment:
+      - LDAP_ROOT=dc=retail,dc=foletta,dc=xyz
+      - LDAP_ADMIN_USERNAME=admin
+      - LDAP_ADMIN_PASSWORD=adminpassword
+      - LDAP_CUSTOM_LDIF_DIR=ldifs/retail
+      - LDAP_USERS=greg,james
+      - LDAP_PASSWORDS=fortinet,fortinet
+      - LDAP_ENABLE_TLS=no
+      - LDAP_TLS_CERT_FILE=/opt/bitnami/openldap/certs/leaf.pem
+      - LDAP_TLS_KEY_FILE=/opt/bitnami/openldap/certs/leaf.key
+      - LDAP_TLS_CA_FILE=/opt/bitnami/openldap/certs/CA.pem
+
+    volumes:
+      - './ldifs:/ldifs'
+      - './certs:/opt/bitnami/openldap/certs'
+    networks:
+      ldap:
+        ipv4_address: 172.18.0.2
+
+  openldap_wholesale:
+    hostname: wholesale
+    image: docker.io/bitnami/openldap:2.6
+    #ports:
+    #  - '1390:1389'
+    #  - '1637:1636'
+    environment:
+      - LDAP_ROOT=dc=wholesale,dc=foletta,dc=xyz
+      - LDAP_ADMIN_USERNAME=admin
+      - LDAP_ADMIN_PASSWORD=adminpassword
+      - LDAP_USERS=greg,julie
+      - LDAP_PASSWORDS=fortinet,fortinet
+      - LDAP_ENABLE_TLS=no
+      - LDAP_TLS_CERT_FILE=/opt/bitnami/openldap/certs/leaf.pem
+      - LDAP_TLS_KEY_FILE=/opt/bitnami/openldap/certs/leaf.key
+      - LDAP_TLS_CA_FILE=/opt/bitnami/openldap/certs/CA.pem
+
+    volumes:
+      #- './ldifs:/ldifs'
+      - './certs:/opt/bitnami/openldap/certs'
+    networks:
+      ldap:
+        ipv4_address: 172.18.0.3
+
+#volumes:
+#  openldap_data:
+#    driver: local
+  
+
+networks:
+  ldap:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.18.0.0/16
+          gateway: 172.18.0.1 

@@ -1,0 +1,50 @@
+dn: dc=retail,dc=foletta,dc=xyz
+objectClass: dcObject
+objectClass: organization
+dc: retail
+o: example
+
+# OU
+dn: ou=users,dc=retail,dc=foletta,dc=xyz
+objectClass: organizationalUnit
+ou: users
+
+# User
+dn: cn=greg,ou=users,dc=retail,dc=foletta,dc=xyz
+uid: greg
+mail: greg@retail.foletta.xyz
+cn: Greg
+sn: Foletta
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+userPassword:: Zm9ydGluZXQ=
+uidNumber: 1000
+gidNumber: 1000
+homeDirectory: /home/greg
+
+dn: cn=mark,ou=users,dc=retail,dc=foletta,dc=xyz
+uid: mark
+mail: mark@retail.foletta.xyz
+cn: Mark
+sn: Sampson
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+userPassword:: Zm9ydGluZXQ=
+uidNumber: 1001
+gidNumber: 1001
+homeDirectory: /home/mark
+
+dn: cn=peter,ou=users,dc=retail,dc=foletta,dc=xyz
+uid: peter
+mail: peter@retail.foletta.xyz
+cn: Peter
+sn: Jones
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+userPassword:: Zm9ydGluZXQ=
+uidNumber: 1002
+gidNumber: 1002
+homeDirectory: /home/peter
