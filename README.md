@@ -21,3 +21,7 @@ This repository contains a docker-compose and LDIFs to spin up two test LDAP ser
 # NAT Ports
 
 Personally, I advertise my docker networks out to my wider network, so I don't need to NAT. If you need to NAT inbound, uncomment the 'ports' section in the docker-compose file.
+
+# TODO
+
+- LDAPS doesn't currently work, but should be pretty easy to enable. PRs welcome.
