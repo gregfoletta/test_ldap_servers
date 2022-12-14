@@ -12,14 +12,14 @@ services:
       - LDAP_ADMIN_USERNAME=admin
       - LDAP_ADMIN_PASSWORD=adminpassword
       - LDAP_CUSTOM_LDIF_DIR=ldifs/retail
-      - LDAP_ENABLE_TLS=no
-      #- LDAP_TLS_CERT_FILE=/opt/bitnami/openldap/certs/leaf.pem
-      #- LDAP_TLS_KEY_FILE=/opt/bitnami/openldap/certs/leaf.key
-      #- LDAP_TLS_CA_FILE=/opt/bitnami/openldap/certs/CA.pem
+      - LDAP_ENABLE_TLS=yes
+      - LDAP_TLS_CERT_FILE=/opt/bitnami/openldap/certs/leaf.pem
+      - LDAP_TLS_KEY_FILE=/opt/bitnami/openldap/certs/leaf.key
+      - LDAP_TLS_CA_FILE=/opt/bitnami/openldap/certs/CA.pem
 
     volumes:
       - './ldifs:/ldifs'
-      #- './certs:/opt/bitnami/openldap/certs'
+      - './certs/retail:/opt/bitnami/openldap/certs'
     networks:
       ldap:
         ipv4_address: 172.18.0.2
@@ -35,14 +35,14 @@ services:
       - LDAP_ADMIN_USERNAME=admin
       - LDAP_ADMIN_PASSWORD=adminpassword
       - LDAP_CUSTOM_LDIF_DIR=ldifs/wholesale
-      - LDAP_ENABLE_TLS=no
-      #- LDAP_TLS_CERT_FILE=/opt/bitnami/openldap/certs/leaf.pem
-      #- LDAP_TLS_KEY_FILE=/opt/bitnami/openldap/certs/leaf.key
-      #- LDAP_TLS_CA_FILE=/opt/bitnami/openldap/certs/CA.pem
+      - LDAP_ENABLE_TLS=yes
+      - LDAP_TLS_CERT_FILE=/opt/bitnami/openldap/certs/leaf.pem
+      - LDAP_TLS_KEY_FILE=/opt/bitnami/openldap/certs/leaf.key
+      - LDAP_TLS_CA_FILE=/opt/bitnami/openldap/certs/CA.pem
 
     volumes:
       - './ldifs:/ldifs'
-      #- './certs:/opt/bitnami/openldap/certs'
+      - './certs/wholesale:/opt/bitnami/openldap/certs'
     networks:
       ldap:
         ipv4_address: 172.18.0.3
